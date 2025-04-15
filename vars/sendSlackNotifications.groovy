@@ -1,8 +1,8 @@
-def sendSlackNotifications(String buildStatus = 'STARTED') {
+def sendslackNotification(String buildStatus = 'STARTED') {
   // build status of null means successful
   //This is the condition which we are checking weather buildStatus is SUCCESSFULL or not.
  //This line updated to show the Eclipse with GitHub demo
-  buildStatus =  buildStatus ?: 'SUCCESS'
+  buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
   // Default values
   def colorName = 'RED'
@@ -14,7 +14,7 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   if (buildStatus == 'STARTED') {
     colorName = 'YELLOW'
     colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESS') {
+  } else if (buildStatus == 'SUCCESSFUL') {
     colorName = 'GREEN'
     colorCode = '#00FF00'
   } else {
